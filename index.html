@@ -253,7 +253,7 @@
         <div class="pillar-sub">Under 15 min · every weekday</div>
         <p>Two AI hosts break down the most important developments in agentic and generative AI. Built for your commute, designed for leaders who make decisions, not debug code.</p>
         <div class="latest-label">Latest episode</div>
-        <div class="latest-title">Anthropic overtakes OpenAI; 54% of CEOs say AI is "tearing their company apart"</div>
+        <div class="latest-title" id="latest-podcast">Anthropic overtakes OpenAI; 54% of CEOs say AI is "tearing their company apart"</div>
         <span class="pillar-link">Listen now &#8594;</span>
       </a>
 
@@ -264,7 +264,7 @@
         <div class="pillar-sub">5 minute read · every weekday</div>
         <p>A written intelligence brief covering the AI stories that will shape boardroom conversations this week. Three takeaways, zero fluff, with the context that makes them actionable.</p>
         <div class="latest-label">Latest briefing</div>
-        <div class="latest-title">AI's Reckoning: Violence, Vulnerability, and $300B in Venture Capital</div>
+        <div class="latest-title" id="latest-briefing">AI's Reckoning: Violence, Vulnerability, and $300B in Venture Capital</div>
         <span class="pillar-link">Read today's briefing &#8594;</span>
       </a>
 
@@ -275,7 +275,7 @@
         <div class="pillar-sub">Opinion column</div>
         <p>Where the briefing tells you what happened, this column tells you what it means. Chiel's unfiltered perspective on the strategic questions business leaders should be asking about AI.</p>
         <div class="latest-label">Latest take</div>
-        <div class="latest-title">Why most enterprise AI strategies are solving the wrong problem</div>
+        <div class="latest-title" id="latest-take">Why most enterprise AI strategies are solving the wrong problem</div>
         <span class="pillar-link">Read the latest take &#8594;</span>
       </a>
 
@@ -473,6 +473,52 @@
     requestAnimationFrame(tick);
   }
   window.addEventListener('resize',resize); resize(); tick();
+})();
+</script>
+
+<!-- ─── DYNAMIC LATEST-TITLE REFRESH ───
+     Pulls the latest headline for each pillar card from the source-of-truth
+     content sites at page load. If any fetch fails the hardcoded title in
+     the HTML stays as a safe fallback. -->
+<script>
+(function(){
+  const decode = s => { const d = document.createElement('textarea'); d.innerHTML = s; return d.value; };
+  const setTitle = (id, text) => {
+    if (!text) return;
+    const el = document.getElementById(id);
+    if (el) el.textContent = decode(String(text).trim());
+  };
+  const fetchOpts = { cache: 'no-store' };
+
+  // Daily Briefing — first item in briefings.json (sorted newest-first)
+  fetch('https://briefing.ambient-advantage.ai/briefings.json', fetchOpts)
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(arr => { if (Array.isArray(arr) && arr[0]) setTitle('latest-briefing', arr[0].headline); })
+    .catch(() => {});
+
+  // Chiel's Take — first item in articles.json (sorted newest-first)
+  fetch('https://take.ambient-advantage.ai/articles.json', fetchOpts)
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(arr => { if (Array.isArray(arr) && arr[0]) setTitle('latest-take', arr[0].title); })
+    .catch(() => {});
+
+  // Podcast — first item in feed.xml; use first sentence of <description>
+  // because the <title> is just "Ambient Advantage — <date>" rather than
+  // a story-level headline.
+  fetch('https://podcast.ambient-advantage.ai/feed.xml', fetchOpts)
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(xml => {
+      const doc = new DOMParser().parseFromString(xml, 'application/xml');
+      const item = doc.querySelector('item');
+      if (!item) return;
+      const desc = item.querySelector('description');
+      if (!desc) return;
+      const text = (desc.textContent || '').trim();
+      const idx = text.indexOf('. ');
+      const firstSentence = idx > 0 ? text.slice(0, idx + 1) : text;
+      setTitle('latest-podcast', firstSentence);
+    })
+    .catch(() => {});
 })();
 </script>
 </body>
