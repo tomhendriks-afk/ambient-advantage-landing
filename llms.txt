@@ -1,0 +1,20 @@
+# Ambient Advantage
+
+> Daily AI intelligence for executives navigating the agentic revolution. Curated by Chiel Hendriks, Managing Director at PwC Canada (previously 16 years at Google), helping enterprise clients turn agentic AI into durable competitive advantage. Ambient Advantage is a podcast, a daily briefing, an opinion column, and a build log — same lens, four formats — built for C-suite executives, consulting practice leaders, and digital transformation owners who need to act on AI, not just read about it. Editorial standard: signal over noise, strategy over hype, every weekday morning.
+
+## The four content sites
+- [The Daily Briefing](https://briefing.ambient-advantage.ai): Five-minute written intelligence brief on the AI stories shaping boardroom conversations. Published every weekday morning (Toronto).
+- [The Podcast](https://podcast.ambient-advantage.ai): Two-host AI podcast under 15 minutes. Same source material as the briefing, formatted for the commute. New episode every weekday morning.
+- [Chiel's Take](https://take.ambient-advantage.ai): Hand-written opinion column. Strategic perspective on the agentic and generative AI questions business leaders should be asking.
+- [Build Log](https://build.ambient-advantage.ai): Behind-the-scenes catalogue of how the Ambient Advantage system itself is built — architecture, components, decisions, gotchas.
+
+## Subscribe and listen
+- [Newsletter (free)](https://buttondown.com/ambient-advantage): Daily email with the briefing and the new podcast episode.
+- [Apple Podcasts](https://podcasts.apple.com/ca/podcast/ambient-advantage/id1892760921)
+- [Spotify](https://open.spotify.com/show/4D9eurcAaBH9c8oOxtBjhJ)
+- [YouTube](https://www.youtube.com/playlist?list=PLMPqF3nDA9KNT0_5aQijWYYwLfI5mHGyD)
+- [RSS feed](https://podcast.ambient-advantage.ai/feed.xml)
+
+## About
+- [About Ambient Advantage](https://ambient-advantage.ai/about): Background on the project, the editorial standards, and the audience.
+- [Chiel Hendriks on LinkedIn](https://www.linkedin.com/in/chielhendriks/): Connect with the curator.
