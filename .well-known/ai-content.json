@@ -1,0 +1,84 @@
+{
+  "name": "Ambient Advantage",
+  "description": "Daily AI intelligence for executives navigating the agentic revolution. A podcast, a daily briefing, an opinion column, and a build log — same lens, four formats — built for C-suite executives, consulting practice leaders, and digital transformation owners. Curated by Chiel Hendriks (Managing Director, PwC Canada).",
+  "owner": {
+    "name": "Chiel Hendriks",
+    "url": "https://www.linkedin.com/in/chielhendriks/"
+  },
+  "llms_txt": "https://ambient-advantage.ai/llms.txt",
+  "endpoints": [
+    {
+      "name": "LLM/agent guide (this site)",
+      "url": "https://ambient-advantage.ai/llms.txt",
+      "type": "text/plain",
+      "description": "Site overview, all four content sites, and subscribe links."
+    },
+    {
+      "name": "Sitemap",
+      "url": "https://ambient-advantage.ai/sitemap.xml",
+      "type": "application/xml",
+      "description": "XML sitemap for search engines."
+    },
+    {
+      "name": "Daily briefings (JSON)",
+      "url": "https://briefing.ambient-advantage.ai/briefings.json",
+      "type": "application/json",
+      "description": "Index of every daily AI briefing — date, headline, snippet, read time. Sorted newest-first."
+    },
+    {
+      "name": "Daily briefings — LLM/agent guide",
+      "url": "https://briefing.ambient-advantage.ai/llms.txt",
+      "type": "text/plain",
+      "description": "Briefing site overview and pointers."
+    },
+    {
+      "name": "Chiel's Take articles (JSON)",
+      "url": "https://take.ambient-advantage.ai/articles.json",
+      "type": "application/json",
+      "description": "Index of every published opinion-column take — slug, title, date, read time, excerpt."
+    },
+    {
+      "name": "Chiel's Take — full archive (markdown)",
+      "url": "https://take.ambient-advantage.ai/llms-full.txt",
+      "type": "text/markdown",
+      "description": "Every published take inlined as full markdown for LLM consumption."
+    },
+    {
+      "name": "Chiel's Take — LLM/agent guide",
+      "url": "https://take.ambient-advantage.ai/llms.txt",
+      "type": "text/plain",
+      "description": "Take site overview and per-article pointers."
+    },
+    {
+      "name": "Podcast RSS feed",
+      "url": "https://podcast.ambient-advantage.ai/feed.xml",
+      "type": "application/rss+xml",
+      "description": "Daily AI podcast — RSS 2.0 with iTunes namespace. Subscribe in any podcast app."
+    },
+    {
+      "name": "Podcast — LLM/agent guide",
+      "url": "https://podcast.ambient-advantage.ai/llms.txt",
+      "type": "text/plain",
+      "description": "Podcast site overview and feed pointers."
+    },
+    {
+      "name": "Build Log posts (JSON)",
+      "url": "https://build.ambient-advantage.ai/posts.json",
+      "type": "application/json",
+      "description": "Build Log post catalogue — slug, title, tags, date, excerpt."
+    },
+    {
+      "name": "Build Log — LLM/agent guide",
+      "url": "https://build.ambient-advantage.ai/llms.txt",
+      "type": "text/plain",
+      "description": "Build Log site overview, posts, and tag pages."
+    }
+  ],
+  "related_sites": [
+    "https://ambient-advantage.ai",
+    "https://briefing.ambient-advantage.ai",
+    "https://take.ambient-advantage.ai",
+    "https://podcast.ambient-advantage.ai",
+    "https://build.ambient-advantage.ai"
+  ]
+}
